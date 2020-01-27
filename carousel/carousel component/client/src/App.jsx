@@ -12,7 +12,7 @@ export default class App extends React.Component {
 
   render(){
     return (
-      <div>
+      <div class="container">
         <h1>This is a carousel, I promise...</h1>
       </div>
     )
