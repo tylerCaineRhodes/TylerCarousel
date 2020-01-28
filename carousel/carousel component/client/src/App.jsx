@@ -8,18 +8,13 @@ export default class App extends React.Component {
 
     this.state = {
       data : [],
-      isActive : false
+      addClass : false
     }
     this.handleToggleClass = this.handleToggleClass.bind(this);
   }
 
   handleToggleClass(){
-    if(this.state.isActive === false){
-      this.setState({isActive : true})
-    }
-    if(this.state.isActive === true){
-      this.setState({isActive : false})
-    }
+    this.setState({addClass : !this.state.addClass})
   }
 
   componentDidMount(){
