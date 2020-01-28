@@ -29,13 +29,15 @@ export default class App extends React.Component {
 
   render(){
     return (
-      <div className="container">
-        <h1>This is a carousel, I promise...</h1>
+      <div className='container'>
 
-        {this.state.data.map((item) => 
-        <div key={item.id}><Item name={item.name} image={item.image} category={item.category} rating={item.rating} /></div>
-        )}
+        <div className="niceRow">
 
+          {this.state.data.map((item) => 
+          <div key={item.id}><Item name={item.name} image={item.image} category={item.category} rating={item.rating} /></div>
+          )}
+
+        </div>
       </div>
     )
   }

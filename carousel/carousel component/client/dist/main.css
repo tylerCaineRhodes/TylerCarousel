@@ -1,15 +1,25 @@
 .container {
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
   width: 1012px;
-  height: 312px;
+  height: 310px;
   border: 1px solid black;
   padding: 0;
   margin: 20px;
   text-align: center;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  overflow: hidden;
+  
 }
 
 img {
   height: 225px;
   width: 225px;
+  padding: 15px;
+ 
+}
+
+.niceRow {
+  display: flex; 
+  flex-direction: row;
+  align-content: center;
 }
