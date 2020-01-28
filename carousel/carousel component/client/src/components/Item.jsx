@@ -2,7 +2,7 @@ import React from 'react';
 
 function Item ({name, image, category, rating}){
   return (
-    <div>
+    <div className="singleItem">
       <img src={image}></img>
       <span>{name}</span><br></br>
       <span>{rating}</span>

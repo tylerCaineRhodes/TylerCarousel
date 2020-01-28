@@ -8,13 +8,13 @@
   text-align: center;
   /* border-radius: 5px; */
   overflow: hidden;
-  
 }
 
 img {
   height: 225px;
   width: 225px;
-  padding: 15px;
+  display: block;
+  /* padding: 15px; */
  
 }
 
@@ -22,4 +22,11 @@ img {
   display: flex; 
   flex-direction: row;
   align-content: center;
+  
+}
+.singleItem {
+  height: 312px;
+  width: 225px;
+  padding: 20px;
+  margin: 0 5px;
 }
