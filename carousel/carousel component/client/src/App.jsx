@@ -31,6 +31,14 @@ export default class App extends React.Component {
     return (
       <div className='container'>
 
+        <span className="leftButton" role="button" onClick={() => {console.log('clicked left!')}}>
+          <button className="leftButtonTarget">this is a button</button>
+        </span>
+
+        <span className="rightButton" role="button" onClick={() => {console.log('clicked right!')}}>
+          <button className="rightButtonTarget"></button>
+        </span>
+
         <div className="niceRow">
 
           {this.state.data.map((item) => 
