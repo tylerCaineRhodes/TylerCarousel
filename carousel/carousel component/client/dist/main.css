@@ -28,8 +28,12 @@ img {
   display: flex; 
   flex-direction: row;
   align-content: center;
-  
+  /* transform: translate3d(-470px 0px 0px); */
 }
+.niceRow :active{
+  transform: translate3d(-470px 0px 0px);
+}
+
 .singleItem {
   height: 312px;
   width: 225px;

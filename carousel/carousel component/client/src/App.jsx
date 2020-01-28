@@ -7,7 +7,18 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      data : []
+      data : [],
+      isActive : false
+    }
+    this.handleToggleClass = this.handleToggleClass.bind(this);
+  }
+
+  handleToggleClass(){
+    if(this.state.isActive === false){
+      this.setState({isActive : true})
+    }
+    if(this.state.isActive === true){
+      this.setState({isActive : false})
     }
   }
 
@@ -19,7 +30,7 @@ export default class App extends React.Component {
     axios.get('http://localhost:3005/wowStuff').then((response) => {
       console.log('this is the response from getting all the stuff --> ', response.data)
       this.setState({
-        data : response.data
+        data : response.data,
       })
     })
     .catch((err) => {
@@ -31,7 +42,7 @@ export default class App extends React.Component {
     return (
       <div className='container'>
 
-        <button className="leftButton" onClick={() => {console.log('clicked left!')}}></button>
+        <button className="leftButton" onClick={this.handleToggleClass}></button>
 
         <button className="rightButton" onClick={() => {console.log('clicked right!')}}></button>
 
