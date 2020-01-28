@@ -31,13 +31,9 @@ export default class App extends React.Component {
     return (
       <div className='container'>
 
-        <span className="leftButton" role="button" onClick={() => {console.log('clicked left!')}}>
-          <button className="leftButtonTarget">this is a button</button>
-        </span>
+        <button className="leftButton" onClick={() => {console.log('clicked left!')}}></button>
 
-        <span className="rightButton" role="button" onClick={() => {console.log('clicked right!')}}>
-          <button className="rightButtonTarget"></button>
-        </span>
+        <button className="rightButton" onClick={() => {console.log('clicked right!')}}></button>
 
         <div className="niceRow">
 

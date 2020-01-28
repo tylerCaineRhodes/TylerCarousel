@@ -7,8 +7,6 @@ function Item ({name, image, category, rating}){
       <span>{name}</span><br></br>
       <span>{rating}</span>
     </div>
-
-    
   )
 }
 
