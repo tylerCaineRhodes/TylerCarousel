@@ -11,7 +11,25 @@
   position: relative;
   left: 10%;
   top: 220px;
+
 }
+
+@keyframes deviate {
+  0%   {left:10%; top:220px;}
+  100%  {left: 90%; top:220px;}
+}
+
+.transformLeft { 
+  /* animation-name: deviate;
+  animation-duration: 3s; */
+  /* transform: translate(-500px); */
+  transform: translate(-500px);
+}
+.transformRight {
+
+  transform: translate(500px);
+}
+
 /* html {
   overflow: scroll;
   overflow-x: hidden;
@@ -21,18 +39,16 @@ img {
   height: 225px;
   width: 225px;
   display: block;
-  /* padding: 15px; */
 }
 
 .niceRow {
   display: flex; 
   flex-direction: row;
-  align-content: center;
+  /* align-content: center; */
   /* transform: translate3d(-470px 0px 0px); */
 }
-.niceRow :active{
-  transform: translate3d(-470px 0px 0px);
-}
+
+
 
 .singleItem {
   height: 312px;
@@ -40,6 +56,8 @@ img {
   padding: 20px;
   margin: 0 5px;
 }
+
+
 .leftButton {
   position:absolute;
   top:35%;

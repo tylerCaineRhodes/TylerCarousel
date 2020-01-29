@@ -8,13 +8,18 @@ export default class App extends React.Component {
 
     this.state = {
       data : [],
-      addClass : false
+      addClassForLeft : false,
+      addClassForRight : false,
     }
-    this.handleToggleClass = this.handleToggleClass.bind(this);
+    this.handleToggleClassLeft = this.handleToggleClassLeft.bind(this);
+    this.handleToggleClassRight = this.handleToggleClassRight.bind(this);
   }
 
-  handleToggleClass(){
-    this.setState({addClass : !this.state.addClass})
+  handleToggleClassLeft(){
+    this.setState({addClassForLeft : !this.state.addClassForLeft})
+  }
+  handleToggleClassRight(){
+    this.setState({addClassForRight : !this.state.addClassForRight})
   }
 
   componentDidMount(){
@@ -35,16 +40,16 @@ export default class App extends React.Component {
 
   render(){
     return (
-      <div className='container'>
+      <div className= 'container'>
 
-        <button className="leftButton" onClick={this.handleToggleClass}></button>
+        <button className="leftButton" onClick={this.handleToggleClassLeft}></button>
 
-        <button className="rightButton" onClick={() => {console.log('clicked right!')}}></button>
+        <button className="rightButton" onClick={this.handleToggleClassRight}></button>
 
-        <div className="niceRow">
+        <div className={'niceRow' + (this.state.addClassForLeft? ' transformLeft' : "") + (this.state.addClassForRight? ' transformRight' : "")}>
 
           {this.state.data.map((item) => 
-          <div key={item.id}><Item name={item.name} image={item.image} category={item.category} rating={item.rating} /></div>
+          <div key={item.id}><Item name={item.name} image={item.image} category={item.category} rating={item.rating} addClass={this.state.addClass} /></div>
           )}
 
         </div>

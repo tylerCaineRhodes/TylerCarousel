@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Item ({name, image, category, rating}){
+function Item ({name, image, category, rating, addClass}){
   return (
-    <div className="singleItem">
+    <div className={'singleItem' + (addClass? ' transform' : '')}>
       <img src={image}></img>
       <span>{name}</span><br></br>
       <span>{rating}</span>
