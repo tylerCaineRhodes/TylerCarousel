@@ -11,29 +11,24 @@
   position: relative;
   left: 10%;
   top: 220px;
-
 }
 
 @keyframes deviate {
-  0%   {left:10%; top:220px;}
-  100%  {left: 90%; top:220px;}
+  from {left:10%; top:220px;}
+  to {left: 50%; top:220px;}
 }
 
 .transformLeft { 
   /* animation-name: deviate;
-  animation-duration: 3s; */
-  /* transform: translate(-500px); */
+  animation-duration: 3s;
+  animation-fill-mode: forwards; */
   transform: translate(-500px);
 }
+
 .transformRight {
 
   transform: translate(500px);
 }
-
-/* html {
-  overflow: scroll;
-  overflow-x: hidden;
-} */
 
 img {
   height: 225px;
@@ -44,11 +39,11 @@ img {
 .niceRow {
   display: flex; 
   flex-direction: row;
+  transition: ease-in-out 1s;  
+  /* transition: ease-in 1s <------- this makes animation smooth */
   /* align-content: center; */
   /* transform: translate3d(-470px 0px 0px); */
 }
-
-
 
 .singleItem {
   height: 312px;
