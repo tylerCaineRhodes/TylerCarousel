@@ -39,17 +39,137 @@ h2 {
 .transformLeft1{ 
   transform: translate(-500px);
 }
-
 .transformLeft2{ 
   transform: translate(-1000px);
 }
-
 .transformLeft3{ 
   transform: translate(-1500px);
 }
-
 .transformLeft4{ 
   transform: translate(-2000px);
+}
+.transformLeft5{ 
+  transform: translate(-2500px);
+}
+.transformLeft6{ 
+  transform: translate(-3000px);
+}
+.transformLeft7{ 
+  transform: translate(-3500px);
+}
+.transformLeft8{ 
+  transform: translate(-4000px);
+}
+.transformLeft9{ 
+  transform: translate(-4500px);
+}
+.transformLeft10{ 
+  transform: translate(-5000px);
+}
+.transformLeft11{ 
+  transform: translate(-5500px);
+}
+.transformLeft12{ 
+  transform: translate(-6000px);
+}
+.transformLeft13{ 
+  transform: translate(-6500px);
+}
+.transformLeft14{ 
+  transform: translate(-7000px);
+}
+.transformLeft15{ 
+  transform: translate(-7500px);
+}
+.transformLeft16{ 
+  transform: translate(-8000px);
+}
+.transformLeft17{ 
+  transform: translate(-8500px);
+}
+.transformLeft18{ 
+  transform: translate(-9000px);
+}
+.transformLeft19{ 
+  transform: translate(-9500px);
+}
+.transformLeft20{ 
+  transform: translate(-10000px);
+}
+.transformLeft21{ 
+  transform: translate(-10500px);
+}
+.transformLeft22{ 
+  transform: translate(-11000px);
+}
+.transformLeft23{ 
+  transform: translate(-11500px);
+}
+.transformLeft24{ 
+  transform: translate(-12000px);
+}
+.transformLeft25{ 
+  transform: translate(-12500px);
+}
+.transformLeft26{ 
+  transform: translate(-13000px);
+}
+.transformLeft27{ 
+  transform: translate(-13500px);
+}
+.transformLeft28{ 
+  transform: translate(-14000px);
+}
+.transformLeft29{ 
+  transform: translate(-14500px);
+}
+.transformLeft30{ 
+  transform: translate(-15000px);
+}
+.transformLeft31{ 
+  transform: translate(-15500px);
+}
+.transformLeft32{ 
+  transform: translate(-16000px);
+}
+.transformLeft33{ 
+  transform: translate(-16500px);
+}
+.transformLeft34{ 
+  transform: translate(-17000px);
+}
+.transformLeft35{ 
+  transform: translate(-17500px);
+}
+.transformLeft36{ 
+  transform: translate(-18000px);
+}
+.transformLeft37{ 
+  transform: translate(-18500px);
+}
+.transformLeft38{ 
+  transform: translate(-19000px);
+}
+.transformLeft39{ 
+  transform: translate(-19500px);
+}
+.transformLeft40{ 
+  transform: translate(-20000px);
+}
+.transformLeft41{ 
+  transform: translate(-20500px);
+}
+.transformLeft42{ 
+  transform: translate(-21000px);
+}
+.transformLeft43{ 
+  transform: translate(-21500px);
+}
+.transformLeft44{ 
+  transform: translate(-22000px);
+}
+.transformLeft45{ 
+  transform: translate(-22500px);
 }
 
 
@@ -71,7 +191,7 @@ img {
 .singleItem {
   height: 312px;
   width: 225px;
-  padding: 20px;
+  padding: 7.5px;
   margin: 0 5px;
 }
 
