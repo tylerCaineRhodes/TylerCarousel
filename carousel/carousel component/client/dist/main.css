@@ -200,7 +200,8 @@ img {
 .leftButton {
   position:absolute;
   top:22%;
-  left:0;
+  /* left:10.7px; */
+  left: 0;
   width:3.5%;
   height:70px;
   z-index:40;
@@ -215,6 +216,9 @@ img {
   transition-timing-function: ease-out;
   transition-delay: 0s;
   color:white;
+  opacity: 0.5;
+}
+.leftButton:hover {
   opacity: 0.9;
 }
 
@@ -237,6 +241,9 @@ img {
   transition-timing-function: ease-out;
   transition-delay: 0s;
   color:white;
+  opacity: 0.5;
+}
+.rightButton:hover {
   opacity: 0.9;
 }
 
