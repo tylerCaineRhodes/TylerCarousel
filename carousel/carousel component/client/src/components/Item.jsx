@@ -24,7 +24,8 @@ class Item extends React.Component {
           editing={false}
           renderStarIcon={() => <span id="icon"><FontAwesomeIcon icon="bacon" /></span>}
           starCount={5}
-          starColor={"#0471AF"}
+          // starColor={"#0471AF"}
+          starColor={'brown'}
           emptyStarColor={"white"}
           value={this.state.rating}
         />
