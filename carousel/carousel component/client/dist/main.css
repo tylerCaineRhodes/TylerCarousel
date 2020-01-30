@@ -275,3 +275,8 @@ img {
 .hide {
   visibility: hidden;
 }
+
+#icon {
+  /* content: url('https://wow.zamimg.com/images/wow/icons/large/ability_dualwield.jpg');
+  transform: scale(.3); */
+}
