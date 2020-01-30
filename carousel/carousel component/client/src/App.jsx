@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Item from './components/Item.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class App extends React.Component {
   constructor(props){
@@ -50,9 +51,9 @@ export default class App extends React.Component {
      
         <div className= 'container'>
 
-          <button className={'leftButton' + (this.state.classIncrement === 0 ? ' hide' : '')} onClick={this.handleLeft}></button>
+          <button className={'leftButton' + (this.state.classIncrement === 0 ? ' hide' : '')} onClick={this.handleLeft}><FontAwesomeIcon icon="angle-left" /></button>
 
-          <button className={"rightButton" + (this.state.classIncrement + 2 === this.state.data.length /2 ? ' hide' : '')} onClick={this.handleRight}></button>
+          <button className={"rightButton" + (this.state.classIncrement + 2 === this.state.data.length /2 ? ' hide' : '')} onClick={this.handleRight}><FontAwesomeIcon icon="angle-right" /></button>
 
           <div className={
             'niceRow' + 

@@ -1,6 +1,6 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Item extends React.Component {
   
@@ -22,7 +22,7 @@ class Item extends React.Component {
         <StarRatingComponent 
           name="rate" 
           editing={false}
-          // renderStarIcon={() => <span id="icon"></span>}
+          renderStarIcon={() => <span id="icon"><FontAwesomeIcon icon="bacon" /></span>}
           starCount={5}
           starColor={"#0471AF"}
           emptyStarColor={"white"}
