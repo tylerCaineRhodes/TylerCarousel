@@ -46,7 +46,7 @@ export default class App extends React.Component {
     
     return (
       <div>
-        <h2 className="align-center">Related</h2>
+        <h2 className="align-center">Related Items</h2>
      
         <div className= 'container'>
 
