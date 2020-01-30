@@ -46,6 +46,7 @@ export default class App extends React.Component {
     
     return (
       <div>
+        <h1>Here is a huge comment</h1>
         <h2 className="align-center">Related</h2>
      
         <div className= 'container'>
