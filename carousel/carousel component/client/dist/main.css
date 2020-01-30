@@ -265,3 +265,6 @@ img {
   color: #338700;
   font-size:.8571428571428571rem;
 }
+.hide {
+  visibility: hidden;
+}
