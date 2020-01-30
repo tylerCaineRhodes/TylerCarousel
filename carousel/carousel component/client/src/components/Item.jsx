@@ -6,7 +6,6 @@ class Item extends React.Component {
   
   constructor(props){
     super(props)
-    console.log('here is rating', props.rating)
 
     this.state = {
       rating : props.rating
