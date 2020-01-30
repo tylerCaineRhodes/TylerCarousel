@@ -4,8 +4,9 @@ function Item ({name, image, category, rating}){
   return (
     <div className='singleItem'>
       <img src={image}></img>
-      <span><b>{name}</b></span><br></br>
-      <span>rating:{rating}</span>
+      <span id="itemName"><b>{name}</b></span>
+      <span id="rating">rating:{rating}</span>
+      <span id="smallSave">SAVE 46% thru 01/31/2020</span>
     </div>
   )
 }
