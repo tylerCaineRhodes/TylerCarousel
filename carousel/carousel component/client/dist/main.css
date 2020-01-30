@@ -1,6 +1,24 @@
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 5px;
+  padding: 0;
+  color: #333;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: "DIN Next",Helvetica,Arial,sans-serif;
+  color: #333;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  display: block;
+  font-size: 2rem;
+}
+
 .container {
   background-color: rgb(255, 255, 255);
-  width: 1300px;
+  width: 1200px;
   height: 300px;
   border: 1px solid rgba(126, 121, 121, 0.342);
   padding: 0;
@@ -18,17 +36,22 @@
   to {left: 50%; top:220px;}
 }
 
-.transformLeft { 
-  /* animation-name: deviate;
-  animation-duration: 3s;
-  animation-fill-mode: forwards; */
+.transformLeft1{ 
   transform: translate(-500px);
 }
 
-.transformRight {
-
-  transform: translate(500px);
+.transformLeft2{ 
+  transform: translate(-1000px);
 }
+
+.transformLeft3{ 
+  transform: translate(-1500px);
+}
+
+.transformLeft4{ 
+  transform: translate(-2000px);
+}
+
 
 img {
   height: 225px;
@@ -39,7 +62,7 @@ img {
 .niceRow {
   display: flex; 
   flex-direction: row;
-  transition: ease-in-out 1s;  
+  transition: ease-in-out .5s;  
   /* transition: ease-in 1s <------- this makes animation smooth */
   /* align-content: center; */
   /* transform: translate3d(-470px 0px 0px); */

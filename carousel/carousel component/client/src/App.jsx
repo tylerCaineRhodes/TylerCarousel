@@ -8,18 +8,26 @@ export default class App extends React.Component {
 
     this.state = {
       data : [],
-      addClassForLeft : false,
-      addClassForRight : false,
+      classIncrement : 0
     }
-    this.handleToggleClassLeft = this.handleToggleClassLeft.bind(this);
-    this.handleToggleClassRight = this.handleToggleClassRight.bind(this);
+    
+    this.handleLeft = this.handleLeft.bind(this)
+    this.handleRight = this.handleRight.bind(this)
   }
 
-  handleToggleClassLeft(){
-    this.setState({addClassForLeft : !this.state.addClassForLeft})
+  // handleToggleClassLeft(){
+  //   this.setState({addClassForLeft : !this.state.addClassForLeft})
+  // }
+  // handleToggleClassRight(){
+  //   this.setState({addClassForRight : !this.state.addClassForRight})
+  // }
+  handleLeft(){
+    if(this.state.classIncrement > 0){
+      this.setState({classIncrement : this.state.classIncrement-=1})
+    }
   }
-  handleToggleClassRight(){
-    this.setState({addClassForRight : !this.state.addClassForRight})
+  handleRight(){
+      this.setState({classIncrement : this.state.classIncrement+=1})
   }
 
   componentDidMount(){
@@ -41,16 +49,17 @@ export default class App extends React.Component {
   render(){
     
     return (
+     
       <div className= 'container'>
 
-        <button className="leftButton" onClick={this.handleToggleClassLeft}></button>
+        <button className="leftButton" onClick={this.handleLeft}></button>
 
-        <button className="rightButton" onClick={this.handleToggleClassRight}></button>
+        <button className="rightButton" onClick={this.handleRight}></button>
 
-        <div className={'niceRow' + (this.state.addClassForLeft? ' transformLeft' : "") + (this.state.addClassForRight? ' transformRight' : "")}>
+        <div className={'niceRow' + (this.state.classIncrement === 1 ? ' transformLeft1' : "") + (this.state.classIncrement === 2 ? ' transformLeft2' : "") + (this.state.classIncrement === 3 ? ' transformLeft3' : "") + (this.state.classIncrement === 4 ? ' transformLeft4' : "")}>
 
           {this.state.data.map((item) => 
-          <div key={item.id}><Item name={item.name} image={item.image} category={item.category} rating={item.rating} addClass={this.state.addClass} /></div>
+          <div key={item.id}><Item name={item.name} image={item.image} category={item.category} rating={item.rating} /></div>
           )}
 
         </div>
