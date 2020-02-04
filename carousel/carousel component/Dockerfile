@@ -1,6 +1,6 @@
 FROM node:12
 
-WORKDIR /usr/src/app/server
+WORKDIR /usr/src/app
 
 COPY package*.json ./
 
@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3005
 
-CMD [ "node", "server.js" ]
+CMD [ "node", "server/server.js" ]
