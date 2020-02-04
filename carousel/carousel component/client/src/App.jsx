@@ -32,7 +32,7 @@ export default class App extends React.Component {
   }
 
   fetchAllData(){
-    axios.get('http://localhost:3005/wowStuff').then((response) => {
+    axios.get('/wowStuff').then((response) => {
       console.log('this is the response from getting all the stuff --> ', response.data)
       this.setState({
         data : response.data,
