@@ -36,7 +36,7 @@ export default class App extends React.Component {
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff').then((response) => {
       console.log('this is the response from getting all the stuff --> ', response.data)
       let tenList = [];
-      for(let i = 0; i < 10; i ++){
+      for(let i = 0; i < 15; i ++){
         tenList.push(response.data[i])
       }
       this.setState({
@@ -53,13 +53,13 @@ export default class App extends React.Component {
     
     return (
       <div>
-        <h2 className="talign-center">Related Items</h2>
+        <h2 className="talign-center th2">Related Items</h2>
      
         <div className= 'tcontainer'>
 
           <button className={'tleftButton' + (this.state.classIncrement === 0 ? ' thide' : '')} onClick={this.handleLeft}><FontAwesomeIcon icon="angle-left" /></button>
 
-          <button className={"trightButton" + (this.state.classIncrement + 2 === this.state.selection.length /2 ? ' thide' : '')} onClick={this.handleRight}><FontAwesomeIcon icon="angle-right" /></button>
+          <button className={"trightButton" + (this.state.classIncrement + 2 > this.state.selection.length /2 ? ' thide' : '')} onClick={this.handleRight}><FontAwesomeIcon icon="angle-right" /></button>
 
           <div className={'tniceRow' + ` transformLeft${this.state.classIncrement}`}>
 

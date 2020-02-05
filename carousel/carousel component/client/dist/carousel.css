@@ -1,11 +1,11 @@
-h1, h2, h3, h4, h5, h6 {
+.th1, .th2, .th3, .th4, .th5, .th6 {
   margin: 0 0 5px;
   padding: 0;
   color: #333;
   font-weight: 400;
 }
 
-h2 {
+.th2 {
   font-family: "DIN Next",Helvetica,Arial,sans-serif;
   color: #333;
   margin-block-start: 0.83em;
@@ -174,7 +174,7 @@ h2 {
 }
 
 
-img, #t {
+#t {
   height: 225px;
   width: 225px;
   display: block;
