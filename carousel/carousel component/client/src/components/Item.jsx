@@ -14,24 +14,24 @@ class Item extends React.Component {
 
   render(){
     return (
-      <div className='singleItem'>
-        <img src={this.props.image}></img>
-        <span id="itemName"><b>{this.props.name}</b></span>
-        <span id="rating">
+      <div className='tsingleItem'>
+        <img id="t"src={this.props.image}></img>
+        <span id="titemName"><b>{this.props.name}</b></span>
+        <span id="trating">
           
         <StarRatingComponent 
           name="rate" 
           editing={false}
-          renderStarIcon={() => <span id="icon"><FontAwesomeIcon icon="bacon" /></span>}
+          renderStarIcon={() => <span id="icon"><FontAwesomeIcon icon="gavel" /></span>}
           starCount={5}
           // starColor={"#0471AF"}
-          starColor={'brown'}
-          emptyStarColor={"white"}
+          starColor={'red'}
+          emptyStarColor={"#c4c8bd"}
           value={this.state.rating}
         />
         
         </span>
-        <span id="smallSave">SAVE 46% thru 01/31/2020</span>
+        <span id="tsmallSave">SAVE 46% thru 01/31/2020</span>
       </div>
     )
   }

@@ -9,7 +9,8 @@ export default class App extends React.Component {
 
     this.state = {
       data : [],
-      classIncrement : 0
+      classIncrement : 0,
+      selection: []
     }
 
     this.handleLeft = this.handleLeft.bind(this)
@@ -32,10 +33,15 @@ export default class App extends React.Component {
   }
 
   fetchAllData(){
-    axios.get('/wowStuff').then((response) => {
+    axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff').then((response) => {
       console.log('this is the response from getting all the stuff --> ', response.data)
+      let tenList = [];
+      for(let i = 0; i < 10; i ++){
+        tenList.push(response.data[i])
+      }
       this.setState({
         data : response.data,
+        selection: tenList
       })
     })
     .catch((err) => {
@@ -47,17 +53,19 @@ export default class App extends React.Component {
     
     return (
       <div>
-        <h2 className="align-center">Related Items</h2>
+        <h2 className="talign-center">Related Items</h2>
      
-        <div className= 'container'>
+        <div className= 'tcontainer'>
 
-          <button className={'leftButton' + (this.state.classIncrement === 0 ? ' hide' : '')} onClick={this.handleLeft}><FontAwesomeIcon icon="angle-left" /></button>
+          <button className={'tleftButton' + (this.state.classIncrement === 0 ? ' thide' : '')} onClick={this.handleLeft}><FontAwesomeIcon icon="angle-left" /></button>
 
-          <button className={"rightButton" + (this.state.classIncrement + 2 === this.state.data.length /2 ? ' hide' : '')} onClick={this.handleRight}><FontAwesomeIcon icon="angle-right" /></button>
+          <button className={"trightButton" + (this.state.classIncrement + 2 === this.state.selection.length /2 ? ' thide' : '')} onClick={this.handleRight}><FontAwesomeIcon icon="angle-right" /></button>
 
-          <div className={'niceRow' + ` transformLeft${this.state.classIncrement}`}>
+          <div className={'tniceRow' + ` transformLeft${this.state.classIncrement}`}>
 
-            {this.state.data.map((item) => 
+            
+
+            {this.state.selection.map((item, i) => 
             <div key={item.id}><Item name={item.name} image={item.image} category={item.category} rating={item.rating} /></div>
             )}
 

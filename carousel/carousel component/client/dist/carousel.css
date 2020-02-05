@@ -16,7 +16,7 @@ h2 {
   font-size: 2rem;
 }
 
-.container {
+.tcontainer {
   background-color: rgb(255, 255, 255);
   width: 1200px;
   height: 400px;
@@ -174,21 +174,21 @@ h2 {
 }
 
 
-img {
+img, #t {
   height: 225px;
   width: 225px;
   display: block;
   margin-bottom: 40px;
 }
 
-.niceRow {
+.tniceRow {
   display: flex; 
   flex-direction: row;
   transition: ease-in-out .5s;  
   /* transition: ease-in 1s <------- this makes animation smooth */
 }
 
-.singleItem {
+.tsingleItem {
   max-height: 399px;
   max-width: 225px;
   padding: 7.5px;
@@ -197,7 +197,7 @@ img {
 }
 
 
-.leftButton {
+.tleftButton {
   position:absolute;
   top:22%;
   /* left:10.7px; */
@@ -218,12 +218,12 @@ img {
   color:white;
   opacity: 0.5;
 }
-.leftButton:hover {
+.tleftButton:hover {
   opacity: 0.9;
 }
 
 
-.rightButton {
+.trightButton {
   position:absolute;
   top:22%;
   right: 0%;
@@ -243,15 +243,15 @@ img {
   color:white;
   opacity: 0.5;
 }
-.rightButton:hover {
+.trightButton:hover {
   opacity: 0.9;
 }
 
-.align-center {
+.talign-center {
   text-align: center!important;
 }
 
-#itemName {
+#titemName {
   height: 20px;
   width: 225px;
   display: block;
@@ -260,7 +260,7 @@ img {
   font-size: 1rem;
 }
 
-#rating {
+#trating {
   margin-bottom: 30px;
   width: 225px;
   display: block;
@@ -268,11 +268,11 @@ img {
   height: 2px
 }
 
-#smallSave {
+#tsmallSave {
   color: #338700;
   font-size:.8571428571428571rem;
 }
-.hide {
+.thide {
   visibility: hidden;
 }
 
