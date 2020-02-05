@@ -14,7 +14,7 @@ class Item extends React.Component {
 
   render(){
     return (
-      <div className='tsingleItem'>
+      <div className='tsingleItem' onClick={this.props.itemClicked}>
         <img id="t"src={this.props.image}></img>
         <span id="titemName"><b>{this.props.name}</b></span>
         <span id="trating">
@@ -25,7 +25,7 @@ class Item extends React.Component {
           renderStarIcon={() => <span id="icon"><FontAwesomeIcon icon="gavel" /></span>}
           starCount={5}
           // starColor={"#0471AF"}
-          starColor={'red'}
+          starColor={'maroon'}
           emptyStarColor={"#c4c8bd"}
           value={this.state.rating}
         />

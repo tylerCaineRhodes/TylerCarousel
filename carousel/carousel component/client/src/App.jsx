@@ -15,6 +15,7 @@ export default class App extends React.Component {
 
     this.handleLeft = this.handleLeft.bind(this)
     this.handleRight = this.handleRight.bind(this)
+    this.itemClicked = this.itemClicked.bind(this)
   }
 
   handleLeft(){
@@ -30,6 +31,7 @@ export default class App extends React.Component {
 
   componentDidMount(){
     this.fetchAllData()
+    // window.addEventListener('searched')
   }
 
   fetchAllData(){
@@ -49,6 +51,14 @@ export default class App extends React.Component {
     })
   }
 
+  itemClicked(){
+    // let itemId = e.target.item.id
+    // let event = new CustomEvent('itemClicked', {
+    //   detail: {itemId}
+    // })
+    console.log('individual item was clicked')
+  }
+
   render(){
     
     return (
@@ -66,7 +76,7 @@ export default class App extends React.Component {
             
 
             {this.state.selection.map((item, i) => 
-            <div key={item.id}><Item name={item.name} image={item.image} category={item.category} rating={item.rating} /></div>
+            <div key={item.id} ><Item itemClicked={this.itemClicked} name={item.name} image={item.image} category={item.category} rating={item.rating} /></div>
             )}
 
           </div>
