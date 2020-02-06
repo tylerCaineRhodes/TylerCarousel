@@ -21,6 +21,18 @@ app.get('/wowStuff', (req, res) => {
     }
   })
 })
+app.get('/wowStuff/category', (req, res) => {
+  console.log('this is params --->', req.query)
+
+  db.getCategories(req.query.id, (err, data) => {
+    if(err){
+      console.log('problem getting categories in the server')
+      res.send(err)
+    } else {
+      res.send(data)
+    }
+  })
+})
 
 app.listen(port, () => {
   console.log(`yo, dude, listen-  you're connected to ${port}`);

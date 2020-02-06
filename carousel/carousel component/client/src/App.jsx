@@ -15,6 +15,7 @@ export default class App extends React.Component {
 
     this.handleLeft = this.handleLeft.bind(this)
     this.handleRight = this.handleRight.bind(this)
+    this.getRelatedItems = this.getRelatedItems.bind(this)
   }
 
   handleLeft(){
@@ -30,7 +31,19 @@ export default class App extends React.Component {
 
   componentDidMount(){
     this.fetchAllData()
-    // window.addEventListener('searched')
+    window.addEventListener('jordanAwesome', this.getRelatedItems)
+  }
+
+  getRelatedItems(e){
+    console.log('this is the detail -->', e.detail)
+    let idThing = e.detail;
+    axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/category', {
+      params : {
+        id: idThing
+      }
+    }).then((response) => {
+      console.log('this is the response from trying to get a category from dispatch -->', response.data)
+    })
   }
 
   fetchAllData(){

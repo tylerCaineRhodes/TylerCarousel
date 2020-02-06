@@ -23,6 +23,17 @@ const getAllData = (callback) => {
   })
 }
 
+const getCategories = (id, callback) => {
+  connection.query(`select * from items where category = (select category from items where id =${id})`, (err, data) => {
+    if(err){
+      console.log('something went wrong with getting categories in db')
+      callback(err, null)
+    } else {
+      callback(null, data)
+    }
+  })
+}
+
 
 // const data = {
 //   "Sheet1": [
@@ -1178,6 +1189,6 @@ const getAllData = (callback) => {
 // }
 // populateData(data.Sheet1);
 
-module.exports = {getAllData}
+module.exports = {getAllData, getCategories}
 
 

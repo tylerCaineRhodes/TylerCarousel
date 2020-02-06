@@ -15,11 +15,12 @@ class Item extends React.Component {
   }
 
   clickItem(){
-    // let itemId = e.target.item.id
-    // let event = new CustomEvent('itemClicked', {
-    //   detail: {itemId}
-    // })
+    
+    let event = new CustomEvent('jordanAwesome', {
+      detail: this.state.id
+    })
     console.log(this.state.id)
+    window.dispatchEvent(event)
   }
 
   render(){
