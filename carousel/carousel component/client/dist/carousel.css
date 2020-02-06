@@ -10,7 +10,7 @@
   font-family: "DIN Next",Helvetica,Arial,sans-serif;
   color: #333;
   margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
+  /* margin-block-end: 0.83em; */
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   display: block;
@@ -25,6 +25,7 @@
   padding: 0;
   /* margin: 20px; */
   text-align: center;
+  text-align: center!important;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -179,7 +180,7 @@
   height: 225px;
   width: 225px;
   display: block;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 .tniceRow {
@@ -261,25 +262,28 @@
 }
 
 #titemName {
-  height: 20px;
+  height: 60px;
   width: 225px;
   display: block;
   font-family: Helvetica,Arial,sans-serif;
   margin-bottom: 15px;
   font-size: 1rem;
+  line-height: 1.42857143;
 }
 
 #trating {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   width: 225px;
   display: block;
   font-family: Helvetica,Arial,sans-serif;
-  height: 2px
+  height: 17px
 }
 
 #tsmallSave {
   color: #338700;
   font-size:.8571428571428571rem;
+  height: 16px;
+  margin-bottom: 15px;
 }
 .thide {
   visibility: hidden;
