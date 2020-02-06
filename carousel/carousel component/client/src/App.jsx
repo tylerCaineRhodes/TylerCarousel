@@ -35,14 +35,14 @@ export default class App extends React.Component {
   }
 
   getRelatedItems(e){
-    // console.log('this is the detail -->', e.detail)
+    console.log('this is the detail -->', e.detail)
     let idThing = e.detail;
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/category', {
       params : {
         id: idThing
       }
     }).then((response) => {
-      // console.log('this is the response from trying to get a category-->', response.data)
+      console.log('this is the response from trying to get a category-->', response.data)
       let tenList = [];
       for(let i = 0; i < 15; i ++){
         tenList.push(response.data[i])

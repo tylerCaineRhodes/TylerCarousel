@@ -8,6 +8,8 @@ const connection = mysql.createConnection({
   database: 'Wowes'
 });
 
+
+
 connection.connect(err => {
   console.log('now connected to your database')
 });
@@ -60,7 +62,7 @@ const getCategories = (id, callback) => {
 //           "price": "106.01",
 //           "extra_url1": "https://wow.zamimg.com/uploads/screenshots/normal/183589-edgemasters-handguards.jpg",
 //           "category": "armor"
-//       },
+//       }, insert into items (id, image, name, rating, category) values ("2","https://wow.zamimg.com/uploads/screenshots/normal/27379-edgemasters-handguards.jpg", "Edgemaster's Handguards\n", "4.1", "armor");   
 //       {
 //           "id": "3",
 //           "name": "Hide of the Wild",
