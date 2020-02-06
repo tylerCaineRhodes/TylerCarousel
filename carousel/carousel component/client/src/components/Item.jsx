@@ -19,7 +19,7 @@ class Item extends React.Component {
     let event = new CustomEvent('jordanAwesome', {
       detail: this.state.id
     })
-    console.log(this.state.id)
+    // console.log(this.state.id)
     window.dispatchEvent(event)
   }
 

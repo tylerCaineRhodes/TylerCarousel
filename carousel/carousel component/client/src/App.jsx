@@ -35,22 +35,29 @@ export default class App extends React.Component {
   }
 
   getRelatedItems(e){
-    console.log('this is the detail -->', e.detail)
+    // console.log('this is the detail -->', e.detail)
     let idThing = e.detail;
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/category', {
       params : {
         id: idThing
       }
     }).then((response) => {
-      console.log('this is the response from trying to get a category from dispatch -->', response.data)
+      // console.log('this is the response from trying to get a category-->', response.data)
+      let tenList = [];
+      for(let i = 0; i < 15; i ++){
+        tenList.push(response.data[i])
+      }
+      this.setState({
+        selection: tenList
+      })
     })
   }
 
   fetchAllData(){
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff').then((response) => {
-      console.log('this is the response from getting all the stuff --> ', response.data)
+      // console.log('this is the response from getting all the stuff --> ', response.data)
       let tenList = [];
-      for(let i = 0; i < 15; i ++){
+      for(let i = 15; i > 0; i --){
         tenList.push(response.data[i])
       }
       this.setState({
