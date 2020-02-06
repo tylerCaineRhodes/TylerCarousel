@@ -8,13 +8,23 @@ class Item extends React.Component {
     super(props)
 
     this.state = {
-      rating : props.rating
+      rating : props.rating,
+      id: this.props.itemId
     }
+    this.clickItem = this.clickItem.bind(this);
+  }
+
+  clickItem(){
+    // let itemId = e.target.item.id
+    // let event = new CustomEvent('itemClicked', {
+    //   detail: {itemId}
+    // })
+    console.log(this.state.id)
   }
 
   render(){
     return (
-      <div className='tsingleItem' onClick={this.props.itemClicked}>
+      <div className='tsingleItem' onClick={this.clickItem} >
         <img id="t"src={this.props.image}></img>
         <span id="titemName"><b>{this.props.name}</b></span>
         <span id="trating">
@@ -25,7 +35,7 @@ class Item extends React.Component {
           renderStarIcon={() => <span id="icon"><FontAwesomeIcon icon="gavel" /></span>}
           starCount={5}
           // starColor={"#0471AF"}
-          starColor={'maroon'}
+          starColor={'#0471AF'}
           emptyStarColor={"#c4c8bd"}
           value={this.state.rating}
         />
@@ -38,4 +48,3 @@ class Item extends React.Component {
 }
 
 export default Item;
-//{name, image, category, rating}
