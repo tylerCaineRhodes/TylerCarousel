@@ -19,15 +19,14 @@
 
 .tcontainer {
   background-color: rgb(255, 255, 255);
-  width: 1200px;
-  height: 400px;
+  width: 100%;
+  height: 442px;
   padding: 0;
   text-align: center;
   text-align: center!important;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
-  left: 10%;
 }
 
 .transformLeft1{ 
@@ -199,10 +198,9 @@
   transition: ease-in .1s;  
 }
 
-
 .tleftButton {
   position:absolute;
-  top:22%;
+  top:36%;
   /* left:10.7px; */
   left: 0;
   width:3.5%;
@@ -212,16 +210,12 @@
   cursor:pointer;
   text-align:center;
   color:white;
-  opacity: 0.8;
-}
-
-.tleftButton:hover {
-  opacity: 0.9;
+  opacity: 0.5;
 }
 
 .trightButton {
   position:absolute;
-  top:22%;
+  top:36%;
   right: 0%;
   width:3.5%;
   height:70px;
@@ -230,10 +224,10 @@
   cursor:pointer;
   text-align:center;
   color:white;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
-.trightButton:hover {
+.trightButton:hover, .tleftButton:hover {
   opacity: 0.9;
 }
 
@@ -279,8 +273,4 @@
   visibility: hidden;
 }
 
-#icon {
-  /* content: url('https://wow.zamimg.com/images/wow/icons/large/ability_dualwield.jpg');
-  transform: scale(.3); */
-}
 

@@ -44,9 +44,14 @@ export default class App extends React.Component {
     }).then((response) => {
       // console.log('this is the response from trying to get a category-->', response.data)
       let tenList = [];
-      let randomNum = Math.floor(Math.random() * Math.floor(5));
-      for(let i = randomNum; i < (randomNum + 15); i ++){
-        tenList.push(response.data[i])
+      let randomNum = Math.floor(Math.random() * Math.floor(4));
+      let endNum = 15;
+      for(let i = randomNum; i < (randomNum + endNum); i ++){
+        if(response.data[i].id !== idThing){
+          tenList.push(response.data[i])
+        } else {
+          endNum+=1;
+        }
       }
       this.setState({
         selection: tenList
@@ -58,8 +63,11 @@ export default class App extends React.Component {
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff').then((response) => {
       // console.log('this is the response from getting all the stuff --> ', response.data)
       let tenList = [];
-      let randomNum = Math.floor(Math.random() * Math.floor(85));
-      for(let i = randomNum; i < (randomNum + 15); i++){
+      // let randomNum = Math.floor(Math.random() * Math.floor(85));
+      // for(let i = randomNum; i < (randomNum + 15); i++){
+      //   tenList.push(response.data[i])
+      // }
+      for(let i = 1; i < 16; i++){
         tenList.push(response.data[i])
       }
       this.setState({
@@ -76,9 +84,9 @@ export default class App extends React.Component {
     
     return (
       <div>
-        <h2 className="talign-center th2">Related Items</h2>
      
         <div className= 'tcontainer'>
+        <h2 className="talign-center th2">Related Items</h2>
 
           <button className={'tleftButton' + (this.state.classIncrement === 0 ? ' thide' : '')} onClick={this.handleLeft}><FontAwesomeIcon icon="angle-left" /></button>
 
