@@ -21,22 +21,13 @@
   background-color: rgb(255, 255, 255);
   width: 1200px;
   height: 400px;
-  /* border: 1px solid rgba(126, 121, 121, 0.342); */
   padding: 0;
-  /* margin: 20px; */
   text-align: center;
   text-align: center!important;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
-  /* left: 10%;
-  top: 220px; */
   left: 10%;
-}
-
-@keyframes deviate {
-  from {left:10%; top:220px;}
-  to {left: 50%; top:220px;}
 }
 
 .transformLeft1{ 
@@ -216,22 +207,15 @@
   height:70px;
   z-index:40;
   background: #0471AF;
-  opacity:.8;
   cursor:pointer;
   text-align:center;
-  transform-origin: 55% 50%;
-  transition:transform .1s ease-out 0s;
-  transition-property: transform;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
   color:white;
-  opacity: 0.5;
+  opacity: 0.8;
 }
+
 .tleftButton:hover {
   opacity: 0.9;
 }
-
 
 .trightButton {
   position:absolute;
@@ -241,18 +225,12 @@
   height:70px;
   z-index:40;
   background: #0471AF;
-  opacity:.8;
   cursor:pointer;
   text-align:center;
-  transform-origin: 55% 50%;
-  transition:transform .1s ease-out 0s;
-  transition-property: transform;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
   color:white;
-  opacity: 0.5;
+  opacity: 0.8;
 }
+
 .trightButton:hover {
   opacity: 0.9;
 }

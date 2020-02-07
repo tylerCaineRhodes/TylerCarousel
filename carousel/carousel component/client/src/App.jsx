@@ -44,7 +44,8 @@ export default class App extends React.Component {
     }).then((response) => {
       console.log('this is the response from trying to get a category-->', response.data)
       let tenList = [];
-      for(let i = 0; i < 15; i ++){
+      let randomNum = Math.floor(Math.random() * Math.floor(5));
+      for(let i = randomNum; i < (randomNum + 15); i ++){
         tenList.push(response.data[i])
       }
       this.setState({
@@ -57,7 +58,8 @@ export default class App extends React.Component {
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff').then((response) => {
       // console.log('this is the response from getting all the stuff --> ', response.data)
       let tenList = [];
-      for(let i = 15; i > 0; i --){
+      let randomNum = Math.floor(Math.random() * Math.floor(85));
+      for(let i = randomNum; i < (randomNum + 15); i++){
         tenList.push(response.data[i])
       }
       this.setState({
