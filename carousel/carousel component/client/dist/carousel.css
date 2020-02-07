@@ -186,7 +186,7 @@
   max-width: 225px;
   padding: 7.5px;
   margin: 0 5px;
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
 }
 .tsingleItem:hover {
   max-height: 399px;
@@ -195,6 +195,8 @@
   margin: 0 5px;
   margin-bottom: 15px;
   cursor:pointer;
+  transform: scale(1.02);
+  transition: ease-in .1s;  
 }
 
 
@@ -247,6 +249,16 @@
   margin-bottom: 15px;
   font-size: 1rem;
   line-height: 1.42857143;
+}
+#titemName:hover {
+  height: 60px;
+  width: 225px;
+  display: block;
+  font-family: Helvetica,Arial,sans-serif;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.42857143;
+  color: #03517d;
 }
 
 #trating {
