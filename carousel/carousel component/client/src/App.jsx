@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import Item from './components/Item.jsx';
+import CarouselRelated from './components/CarouselRelated.jsx';
+import CarouselVisited from './components/CarouselVisited.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class App extends React.Component {
@@ -84,22 +86,18 @@ export default class App extends React.Component {
     
     return (
       <div>
-     
-        <div className= 'tcontainer'>
-        <h2 className="talign-center th2">Related Items</h2>
-
-          <button className={'tleftButton' + (this.state.classIncrement === 0 ? ' thide' : '')} onClick={this.handleLeft}><FontAwesomeIcon icon="angle-left" /></button>
-
-          <button className={"trightButton" + (this.state.classIncrement + 2 > this.state.selection.length /2 ? ' thide' : '')} onClick={this.handleRight}><FontAwesomeIcon icon="angle-right" /></button>
-
-          <div className={'tniceRow' + ` transformLeft${this.state.classIncrement}`}>
-
-            {this.state.selection.map((item) => 
-            <div key={item.id} ><Item name={item.name} image={item.image} itemId={item.id} category={item.category} rating={item.rating} /></div>
-            )}
-
-          </div>
-        </div>
+        <CarouselRelated
+        classIncrement={this.state.classIncrement}
+        handleLeft={this.handleLeft}
+        handleRight={this.handleRight}
+        selection={this.state.selection}
+        />
+        <CarouselVisited
+        classIncrement={this.state.classIncrement}
+        handleLeft={this.handleLeft}
+        handleRight={this.handleRight}
+        selection={this.state.data}
+        />
       </div>
     )
   }
