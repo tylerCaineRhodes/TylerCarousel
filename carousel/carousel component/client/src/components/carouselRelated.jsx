@@ -12,7 +12,7 @@ function CarouselRelated({classIncrement, handleLeft, handleRight, selection}){
 
         <button className={"trightButton" + (classIncrement + 2 > selection.length /2 ? ' thide' : '')} onClick={handleRight}><FontAwesomeIcon icon="angle-right" /></button>
 
-        <div className={'tniceRow' + ` transformLeft${classIncrement}`}>
+        <div className={'tniceRowRelated' + ` transformLeft${classIncrement}`}>
 
           {selection.map((item) => 
           <div key={item.id} ><Item name={item.name} image={item.image} itemId={item.id} category={item.category} rating={item.rating} /></div>

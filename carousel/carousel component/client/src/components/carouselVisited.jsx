@@ -2,19 +2,19 @@ import React from 'react';
 import Item from './Item.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function CarouselVisited({classIncrement, handleLeft, handleRight, selection}){
+function CarouselVisited({classIncrementViewed, handleLeftViewed, handleRightViewed, selectionViewed}){
   return (
     <div>
       <div className= 'tcontainer'>
       <h2 className="talign-center th2">Previously Viewed</h2>
 
-        <button className={'tleftButton' + (classIncrement === 0 ? ' thide' : '')} onClick={handleLeft}><FontAwesomeIcon icon="angle-left" /></button>
+        <button className={'tleftButtonViewed' + (classIncrementViewed === 0 ? ' thide' : '')} onClick={handleLeftViewed}><FontAwesomeIcon icon="angle-left" /></button>
 
-        <button className={"trightButton" + (classIncrement + 2 > selection.length /2 ? ' thide' : '')} onClick={handleRight}><FontAwesomeIcon icon="angle-right" /></button>
+        <button className={"trightButtonViewed" + (classIncrementViewed + 2 > selectionViewed.length /2 ? ' thide' : '')} onClick={handleRightViewed}><FontAwesomeIcon icon="angle-right" /></button>
 
-        <div className={'tniceRow' + ` transformLeft${classIncrement}`}>
+        <div className={'tniceRowViewed' + ` transformLeft${classIncrementViewed}`}>
 
-          {selection.map((item) => 
+          {selectionViewed.map((item) => 
           <div key={item.id} ><Item name={item.name} image={item.image} itemId={item.id} category={item.category} rating={item.rating} /></div>
           )}
 

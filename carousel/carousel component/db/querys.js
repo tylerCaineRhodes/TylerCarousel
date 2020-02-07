@@ -35,7 +35,17 @@ const getCategories = (id, callback) => {
     }
   })
 }
+const getItem = (id, callback) => {
+  connection.query(`select * from items where id =${id}`, (err, data) => {
+    if(err){
+      console.log('something went wrong with getting categories in db')
+      callback(err, null)
+    } else {
+      callback(null, data)
+    }
+  })
+}
 
-module.exports = {getAllData, getCategories}
+module.exports = {getAllData, getCategories, getItem}
 
 

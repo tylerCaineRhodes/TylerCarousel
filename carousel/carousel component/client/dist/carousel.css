@@ -173,7 +173,13 @@
   margin-bottom: 15px;
 }
 
-.tniceRow {
+.tniceRowRelated {
+  display: flex; 
+  flex-direction: row;
+  transition: ease-in-out .5s;  
+  /* transition: ease-in 1s <------- this makes animation smooth */
+}
+.tniceRowViewed {
   display: flex; 
   flex-direction: row;
   transition: ease-in-out .5s;  
@@ -228,6 +234,38 @@
 }
 
 .trightButton:hover, .tleftButton:hover {
+  opacity: 0.9;
+}
+.tleftButtonViewed {
+  position:absolute;
+  top:36%;
+  /* left:10.7px; */
+  left: 0;
+  width:3.5%;
+  height:70px;
+  z-index:40;
+  background: #0471AF;
+  cursor:pointer;
+  text-align:center;
+  color:white;
+  opacity: 0.5;
+}
+
+.trightButtonViewed {
+  position:absolute;
+  top:36%;
+  right: 0%;
+  width:3.5%;
+  height:70px;
+  z-index:40;
+  background: #0471AF;
+  cursor:pointer;
+  text-align:center;
+  color:white;
+  opacity: 0.5;
+}
+
+.trightButtonViewed:hover, .tleftButton:hover {
   opacity: 0.9;
 }
 
