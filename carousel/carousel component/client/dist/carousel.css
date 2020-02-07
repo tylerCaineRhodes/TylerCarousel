@@ -173,7 +173,13 @@
   margin-bottom: 15px;
 }
 
-.tniceRow {
+.tniceRowRelated {
+  display: flex; 
+  flex-direction: row;
+  transition: ease-in-out .5s;  
+  /* transition: ease-in 1s <------- this makes animation smooth */
+}
+.tniceRowViewed {
   display: flex; 
   flex-direction: row;
   transition: ease-in-out .5s;  
@@ -188,11 +194,6 @@
   margin-bottom: 15px; 
 }
 .tsingleItem:hover {
-  max-height: 399px;
-  max-width: 225px;
-  padding: 7.5px;
-  margin: 0 5px;
-  margin-bottom: 15px;
   cursor:pointer;
   transform: scale(1.02);
   transition: ease-in .1s;  
@@ -200,7 +201,7 @@
 
 .tleftButton {
   position:absolute;
-  top:36%;
+  top:31%;
   /* left:10.7px; */
   left: 0;
   width:3.5%;
@@ -215,7 +216,7 @@
 
 .trightButton {
   position:absolute;
-  top:36%;
+  top:31%;
   right: 0%;
   width:3.5%;
   height:70px;
@@ -228,6 +229,38 @@
 }
 
 .trightButton:hover, .tleftButton:hover {
+  opacity: 0.9;
+}
+.tleftButtonViewed {
+  position:absolute;
+  top:31%;
+  /* left:10.7px; */
+  left: 0;
+  width:3.5%;
+  height:70px;
+  z-index:40;
+  background: #0471AF;
+  cursor:pointer;
+  text-align:center;
+  color:white;
+  opacity: 0.5;
+}
+
+.trightButtonViewed {
+  position:absolute;
+  top: 31%;
+  right: 0%;
+  width:3.5%;
+  height:70px;
+  z-index:40;
+  background: #0471AF;
+  cursor:pointer;
+  text-align:center;
+  color:white;
+  opacity: 0.5;
+}
+
+.trightButtonViewed:hover, .tleftButton:hover {
   opacity: 0.9;
 }
 
@@ -245,13 +278,6 @@
   line-height: 1.42857143;
 }
 #titemName:hover {
-  height: 60px;
-  width: 225px;
-  display: block;
-  font-family: Helvetica,Arial,sans-serif;
-  margin-bottom: 15px;
-  font-size: 1rem;
-  line-height: 1.42857143;
   color: #03517d;
 }
 

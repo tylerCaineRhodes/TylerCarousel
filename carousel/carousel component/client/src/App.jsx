@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import Item from './components/Item.jsx';
+import CarouselRelated from './components/CarouselRelated.jsx';
+import CarouselVisited from './components/CarouselVisited.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class App extends React.Component {
@@ -10,12 +12,17 @@ export default class App extends React.Component {
     this.state = {
       data : [],
       classIncrement : 0,
-      selection: []
+      classIncrementViewed : 0,
+      selection: [],
+      selectionViewed: []
     }
 
     this.handleLeft = this.handleLeft.bind(this)
     this.handleRight = this.handleRight.bind(this)
+    this.handleLeftViewed = this.handleLeftViewed.bind(this)
+    this.handleRightViewed = this.handleRightViewed.bind(this)
     this.getRelatedItems = this.getRelatedItems.bind(this)
+    this.getClickedItem = this.getClickedItem.bind(this)
   }
 
   handleLeft(){
@@ -28,14 +35,44 @@ export default class App extends React.Component {
       this.setState({classIncrement : this.state.classIncrement+=1})
     }
   }
+  handleLeftViewed(){
+    if(this.state.classIncrementViewed > 0){
+      this.setState({classIncrementViewed : this.state.classIncrementViewed-=1})
+    }
+  }
+  handleRightViewed(){
+    if((this.state.classIncrementViewed) < (this.state.data.length / 2)){
+      this.setState({classIncrementViewed : this.state.classIncrementViewed+=1})
+    }
+  }
 
   componentDidMount(){
     this.fetchAllData()
-    window.addEventListener('jordanAwesome', this.getRelatedItems)
+    window.addEventListener('jordanAwesome', e => {
+      this.getRelatedItems(e)
+      this.getClickedItem(e)
+    })
+  }
+  
+  getClickedItem(e){
+    axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/item', {
+      params : {
+        id : e.detail
+      }
+    }).then((response) => {
+      console.log('here is is the response from getting item -->', response.data)
+      //check and see if item is already in carousel. if it isn't -->
+      let temp = this.state.selectionViewed.concat(response.data)
+      this.setState({
+        selectionViewed :temp
+      })
+    }).catch((err) => {
+      console.log('something went wrong with fetching an item yo from database', err)})
   }
 
+
   getRelatedItems(e){
-    // console.log('this is the detail -->', e.detail)
+    console.log('this is the detail -->', e.detail)
     let idThing = e.detail;
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/category', {
       params : {
@@ -84,22 +121,18 @@ export default class App extends React.Component {
     
     return (
       <div>
-     
-        <div className= 'tcontainer'>
-        <h2 className="talign-center th2">Related Items</h2>
-
-          <button className={'tleftButton' + (this.state.classIncrement === 0 ? ' thide' : '')} onClick={this.handleLeft}><FontAwesomeIcon icon="angle-left" /></button>
-
-          <button className={"trightButton" + (this.state.classIncrement + 2 > this.state.selection.length /2 ? ' thide' : '')} onClick={this.handleRight}><FontAwesomeIcon icon="angle-right" /></button>
-
-          <div className={'tniceRow' + ` transformLeft${this.state.classIncrement}`}>
-
-            {this.state.selection.map((item) => 
-            <div key={item.id} ><Item name={item.name} image={item.image} itemId={item.id} category={item.category} rating={item.rating} /></div>
-            )}
-
-          </div>
-        </div>
+        <CarouselRelated
+        classIncrement={this.state.classIncrement}
+        handleLeft={this.handleLeft}
+        handleRight={this.handleRight}
+        selection={this.state.selection}
+        />
+        <CarouselVisited
+        classIncrementViewed={this.state.classIncrementViewed}
+        handleLeftViewed={this.handleLeftViewed}
+        handleRightViewed={this.handleRightViewed}
+        selectionViewed={this.state.selectionViewed}
+        />
       </div>
     )
   }
