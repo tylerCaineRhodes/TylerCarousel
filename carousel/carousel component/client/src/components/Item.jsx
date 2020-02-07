@@ -25,13 +25,19 @@ class Item extends React.Component {
   }
 
   generateRandomDeal(){
-    let deal = Math.floor(Math.random() * Math.floor(99));
+    let min = Math.ceil(6);
+    let max = Math.floor(99);
+    let deal = Math.floor(Math.random() * (max - min)) + min;
     return deal;
   }
+  
   generateRandomDate(){
-    let day = Math.floor(Math.random() * Math.floor(12))
-    let month = Math.floor(Math.random() * Math.floor(28))
-    let randomDate = day + '/' + month + '/';
+    const min = Math.ceil(1);
+    const dayMax = Math.floor(28);
+    const monthMax = Math.floor(12);
+    let month = Math.floor(Math.random() * (monthMax - min)) + min;
+    let day = Math.floor(Math.random() * (dayMax - min)) + min;
+    let randomDate = month + '/' + day + '/';
     return randomDate;
   }
 
