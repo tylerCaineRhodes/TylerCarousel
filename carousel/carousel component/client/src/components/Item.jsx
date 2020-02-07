@@ -12,15 +12,27 @@ class Item extends React.Component {
       id: this.props.itemId
     }
     this.clickItem = this.clickItem.bind(this);
+    this.generateRandomDeal = this.generateRandomDeal.bind(this);
+    this.generateRandomDate = this.generateRandomDate.bind(this);
   }
 
   clickItem(){
-    
     let event = new CustomEvent('jordanAwesome', {
       detail: this.state.id
     })
     // console.log(this.state.id)
     window.dispatchEvent(event)
+  }
+
+  generateRandomDeal(){
+    let deal = Math.floor(Math.random() * Math.floor(99));
+    return deal;
+  }
+  generateRandomDate(){
+    let day = Math.floor(Math.random() * Math.floor(12))
+    let month = Math.floor(Math.random() * Math.floor(28))
+    let randomDate = day + '/' + month + '/';
+    return randomDate;
   }
 
   render(){
@@ -42,7 +54,7 @@ class Item extends React.Component {
         />
         
         </span>
-        <span id="tsmallSave">SAVE 46% thru 01/31/2020</span>
+  <span id="tsmallSave">SAVE {this.generateRandomDeal()}% thru {this.generateRandomDate()}2020</span>
       </div>
     )
   }
