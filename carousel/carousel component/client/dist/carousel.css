@@ -15,18 +15,22 @@
   margin-inline-end: 0px;
   display: block;
   font-size: 28px;
+  margin-bottom: 18px;
 }
 
 .tcontainer {
   background-color: rgb(255, 255, 255);
   width: 100%;
-  height: 442px;
+  /* height: 442px; */
+  height: 100%;
   padding: 0;
   text-align: center;
   text-align: center!important;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
+  max-width: 1032px;
+  margin-bottom: 50px;
 }
 
 .transformLeft1{ 
@@ -188,7 +192,7 @@
 
 .tsingleItem {
   max-height: 399px;
-  max-width: 225px;
+  /* max-width: 225px; */
   padding: 7.5px;
   margin: 0 5px;
   margin-bottom: 15px; 
@@ -282,7 +286,7 @@
 }
 
 #trating {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   width: 225px;
   display: block;
   font-family: Helvetica,Arial,sans-serif;
