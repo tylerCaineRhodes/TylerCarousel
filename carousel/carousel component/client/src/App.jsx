@@ -53,7 +53,7 @@ export default class App extends React.Component {
       this.getClickedItem(e)
     })
   }
-  
+
   getClickedItem(e){
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/item', {
       params : {
@@ -100,10 +100,6 @@ export default class App extends React.Component {
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff').then((response) => {
       // console.log('this is the response from getting all the stuff --> ', response.data)
       let tenList = [];
-      // let randomNum = Math.floor(Math.random() * Math.floor(85));
-      // for(let i = randomNum; i < (randomNum + 15); i++){
-      //   tenList.push(response.data[i])
-      // }
       for(let i = 1; i < 16; i++){
         tenList.push(response.data[i])
       }
