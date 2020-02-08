@@ -6,7 +6,7 @@ function CarouselVisited({classIncrementViewed, handleLeftViewed, handleRightVie
   return (
     <div>
       <div className= 'tcontainer'>
-      <h2 className="talign-center th2">Previously Viewed</h2>
+      <h2 className="talign-center th2">{selectionViewed.length === 0 ? '' :'Previously Viewed'}</h2>
 
         <button className={'tleftButtonViewed' + (classIncrementViewed === 0 ? ' thide' : '')} onClick={handleLeftViewed}><FontAwesomeIcon icon="angle-left" /></button>
 
