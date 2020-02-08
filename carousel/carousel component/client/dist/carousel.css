@@ -201,7 +201,7 @@
 
 .tleftButton {
   position:absolute;
-  top:31%;
+  top:35%;
   /* left:10.7px; */
   left: 0;
   width:3.5%;
@@ -216,7 +216,7 @@
 
 .trightButton {
   position:absolute;
-  top:31%;
+  top:35%;
   right: 0%;
   width:3.5%;
   height:70px;
@@ -233,7 +233,7 @@
 }
 .tleftButtonViewed {
   position:absolute;
-  top:31%;
+  top:35%;
   /* left:10.7px; */
   left: 0;
   width:3.5%;
@@ -248,7 +248,7 @@
 
 .trightButtonViewed {
   position:absolute;
-  top: 31%;
+  top: 35%;
   right: 0%;
   width:3.5%;
   height:70px;
@@ -274,7 +274,7 @@
   display: block;
   font-family: Helvetica,Arial,sans-serif;
   margin-bottom: 15px;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   line-height: 1.42857143;
 }
 #titemName:hover {
@@ -286,7 +286,7 @@
   width: 225px;
   display: block;
   font-family: Helvetica,Arial,sans-serif;
-  height: 17px
+  height: 17px;
 }
 
 #tsmallSave {

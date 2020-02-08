@@ -60,7 +60,7 @@ export default class App extends React.Component {
         id : e.detail
       }
     }).then((response) => {
-      console.log('here is is the response from getting item -->', response.data)
+      // console.log('here is is the response from getting item -->', response.data)
       //check and see if item is already in carousel. if it isn't -->
       let temp = this.state.selectionViewed.concat(response.data)
       this.setState({
@@ -72,7 +72,7 @@ export default class App extends React.Component {
 
 
   getRelatedItems(e){
-    console.log('this is the detail -->', e.detail)
+    // console.log('this is the detail -->', e.detail)
     let idThing = e.detail;
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/category', {
       params : {
