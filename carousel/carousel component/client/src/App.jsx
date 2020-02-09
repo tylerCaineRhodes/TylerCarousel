@@ -62,10 +62,19 @@ export default class App extends React.Component {
     }).then((response) => {
       // console.log('here is is the response from getting item -->', response.data)
       //check and see if item is already in carousel. if it isn't -->
-      let temp = this.state.selectionViewed.concat(response.data)
-      this.setState({
-        selectionViewed :temp
-      })
+      var isPopulated = false;
+      for(let i = 0; i < this.state.selectionViewed.length; i++){
+        if(this.state.selectionViewed[i].id === response.data[0].id){
+          isPopulated = true;
+        }
+      }
+      if(!isPopulated){
+        let temp = this.state.selectionViewed.concat(response.data)
+        this.setState({
+          selectionViewed :temp,
+          // classIncrementViewed : 0  optional bounceback
+        })
+      }
     }).catch((err) => {
       console.log('something went wrong with fetching an item yo from database', err)})
   }
@@ -91,7 +100,9 @@ export default class App extends React.Component {
         }
       }
       this.setState({
-        selection: tenList
+        selection: tenList,
+        // classIncrement: optional bounceback
+        
       })
     })
   }

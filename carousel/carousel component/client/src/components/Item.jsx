@@ -42,6 +42,7 @@ class Item extends React.Component {
   }
 
   render(){
+    
     return (
       <div className='tsingleItem' onClick={this.clickItem} >
         <img id="t"src={this.props.image}></img>
