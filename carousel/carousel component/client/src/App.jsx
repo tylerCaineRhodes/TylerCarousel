@@ -1,16 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import Item from './components/Item.jsx';
 import CarouselRelated from './components/CarouselRelated.jsx';
 import CarouselVisited from './components/CarouselVisited.jsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class App extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      data : [],
+      data : [], //currently unused but populates with all of the data in DB
       classIncrement : 0,
       classIncrementViewed : 0,
       selection: [],
@@ -66,19 +64,19 @@ export default class App extends React.Component {
       for(let i = 0; i < this.state.selectionViewed.length; i++){
         if(this.state.selectionViewed[i].id === response.data[0].id){
           isPopulated = true;
+          break;
         }
       }
       if(!isPopulated){
         let temp = this.state.selectionViewed.concat(response.data)
         this.setState({
           selectionViewed :temp,
-          // classIncrementViewed : 0  optional bounceback
+          // classIncrementViewed : 0  --optional bounceback on search
         })
       }
     }).catch((err) => {
       console.log('something went wrong with fetching an item yo from database', err)})
   }
-
 
   getRelatedItems(e){
     // console.log('this is the detail -->', e.detail)
@@ -92,7 +90,7 @@ export default class App extends React.Component {
       let tenList = [];
       let randomNum = Math.floor(Math.random() * Math.floor(4));
       let endNum = 15;
-      for(let i = randomNum; i < (randomNum + endNum); i ++){
+      for(let i = randomNum; i < (randomNum + endNum); i ++){ //use random list of fifteen related items
         if(response.data[i].id !== idThing){
           tenList.push(response.data[i])
         } else {
@@ -101,13 +99,12 @@ export default class App extends React.Component {
       }
       this.setState({
         selection: tenList,
-        // classIncrement: optional bounceback
-        
+        // classIncrement: 0 --optional bounceback on search
       })
     })
   }
 
-  fetchAllData(){
+  fetchAllData(){ //gets all the data from DB
     axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff').then((response) => {
       // console.log('this is the response from getting all the stuff --> ', response.data)
       let tenList = [];
