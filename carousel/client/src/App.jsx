@@ -63,77 +63,70 @@ export default class App extends React.Component {
   }
   
   getClickedItem(e) {
-    axios
-      .get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/item', {
-        params: {
-          id: e.detail,
-        },
-      })
-      .then((response) => {
-        //check and see if item is already in carousel. if it isn't -->
-        let temp = this.state.selectionViewed.concat(response.data);
-        this.setState({
-          selectionViewed: temp,
-        });
-      })
-      .catch((err) => {
-        console.log(
-          'something went wrong with fetching an item yo from database',
-          err
-        );
+    axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/item', {
+      params: {
+        id: e.detail,
+      },
+    })
+    .then((response) => {
+      let temp = this.state.selectionViewed.concat(response.data);
+      this.setState({
+        selectionViewed: temp,
       });
+    })
+    .catch((err) => {
+      console.log(
+        'something went wrong with fetching an item yo from database',
+        err
+      );
+    });
   }
 
   getRelatedItems(e) {
-    console.log('this is the detail -->', e.detail);
-    let idThing = e.detail;
-    axios
-      .get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/category', {
-        params: {
-          id: idThing,
-        },
-      })
-      .then((response) => {
-        // console.log('this is the response from trying to get a category-->', response.data)
-        let fifteenItems = [];
-        let randomNum = Math.floor(Math.random() * Math.floor(4));
-        let endNum = 15;
-        for (let i = randomNum; i < randomNum + endNum; i++) {
-          if (response.data[i].id !== idThing) {
-            fifteenItems.push(response.data[i]);
-          } else {
-            endNum += 1;
-          }
+    let idVariable = e.detail;
+    axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/category', {
+      params: {
+        id: idVariable,
+      },
+    })
+    .then((response) => {
+      let fifteenItems = [];
+      let randomNum = Math.floor(Math.random() * Math.floor(4)), endNum = 15;
+      for (let i = randomNum; i < randomNum + endNum; i++) {
+        if (response.data[i].id !== idVariable) {
+          fifteenItems.push(response.data[i]);
+        } else {
+          endNum += 1;
         }
-        this.setState({
-          selection: fifteenItems,
-        });
+      }
+      this.setState({
+        selection: fifteenItems,
       });
+    });
   }
 
   fetchAllData() {
-    axios
-      .get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff')
-      .then((response) => {
-        let fifteenItems = [];
-        // let randomNum = Math.floor(Math.random() * Math.floor(85));
-        // for(let i = randomNum; i < (randomNum + 15); i++){
-        //   fifteenItems.push(response.data[i])
-        // }
-        for (let i = 1; i < 16; i++) {
-          fifteenItems.push(response.data[i]);
-        }
-        this.setState({
-          data: response.data,
-          selection: fifteenItems,
-        });
-      })
-      .catch((err) => {
-        console.log(
-          'something went wrong with fetching all data from database',
-          err
-        );
+    axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff')
+    .then((response) => {
+      let fifteenItems = [];
+      // let randomNum = Math.floor(Math.random() * Math.floor(85));
+      // for(let i = randomNum; i < (randomNum + 15); i++){
+      //   fifteenItems.push(response.data[i])
+      // }
+      for (let i = 1; i < 16; i++) {
+        fifteenItems.push(response.data[i]);
+      }
+      this.setState({
+        data: response.data,
+        selection: fifteenItems,
       });
+    })
+    .catch((err) => {
+      console.log(
+        'something went wrong with fetching all data from database',
+        err
+      );
+    });
   }
 
   render() {
