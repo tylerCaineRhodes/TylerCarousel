@@ -25,7 +25,7 @@ const getAllData = (callback) => {
 }
 
 const getCategories = (id, callback) => {
-  connection.query(`select * from items where category = (select category from items where id =${id})`, (err, data) => {
+  connection.query(`select * from items where category = (select category from items where id = ?)`, [ id ], (err, data) => {
     if(err){
       console.log('something went wrong with getting categories in db')
       callback(err, null)
@@ -35,7 +35,7 @@ const getCategories = (id, callback) => {
   })
 }
 const getItem = (id, callback) => {
-  connection.query(`select * from items where id =${id}`, (err, data) => {
+  connection.query(`select * from items where id = ?`,[ id ], (err, data) => {
     if(err){
       console.log('something went wrong with getting categories in db')
       callback(err, null)
