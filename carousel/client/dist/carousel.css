@@ -34,6 +34,7 @@
   z-index: 1;
 }
 
+/* written for scalability but realistically only needs 10 classes*/
 .transformLeft1{ 
   transform: translate(-500px);
 }
@@ -170,7 +171,6 @@
   transform: translate(-22500px);
 }
 
-
 #t {
   height: 225px;
   width: 225px;
@@ -303,5 +303,3 @@
 .thide {
   visibility: hidden;
 }
-
-

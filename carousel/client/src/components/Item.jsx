@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class Item extends React.Component {
-  
+class Item extends Component {
   constructor(props){
     super(props)
 
@@ -24,19 +23,16 @@ class Item extends React.Component {
   }
 
   generateRandomDeal(){
-    let min = Math.ceil(6);
-    let max = Math.floor(99);
+    let min = 6, max = 99;
     let deal = Math.floor(Math.random() * (max - min)) + min;
     return deal;
   }
   
   generateRandomDate(){
-    const min = Math.ceil(1);
-    const dayMax = Math.floor(28);
-    const monthMax = Math.floor(12);
-    let month = Math.floor(Math.random() * (monthMax - min)) + min;
-    let day = Math.floor(Math.random() * (dayMax - min)) + min;
-    let randomDate = month + '/' + day + '/';
+    const min = 1, dayMax = 28, monthMax = 12;
+    let randomMonth = Math.floor(Math.random() * (monthMax - min)) + min, 
+    randomDay = Math.floor(Math.random() * (dayMax - min)) + min,
+    randomDate = randomMonth + '/' + randomDay + '/';
     return randomDate;
   }
 
@@ -59,7 +55,8 @@ class Item extends React.Component {
         />
         
         </span>
-  <span id="tsmallSave">SAVE {this.generateRandomDeal()}% thru {this.generateRandomDate()}2020</span>
+
+        <span id="tsmallSave">SAVE {this.generateRandomDeal()}% thru {this.generateRandomDate()}2020</span>
       </div>
     )
   }

@@ -4,8 +4,6 @@ create database Wowes;
 
 use Wowes;
 
-
-
 create table items (
 
   id int primary key,
@@ -15,8 +13,3 @@ create table items (
   category text
 
 );
-
-
-
-
-
