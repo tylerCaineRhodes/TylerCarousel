@@ -8,8 +8,6 @@ const connection = mysql.createConnection({
   database: 'Wowes'
 });
 
-
-
 connection.connect(err => {
   console.log('now connected to your database')
 });
@@ -47,5 +45,3 @@ const getItem = (id, callback) => {
 }
 
 module.exports = {getAllData, getCategories, getItem}
-
-
