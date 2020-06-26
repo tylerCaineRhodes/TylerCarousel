@@ -7,30 +7,17 @@ const CarouselVisited = ({ classIncrementViewed, handleLeftViewed, handleRightVi
     <div className='tcontainer'>
       <h2 className='talign-center th2'>Previously Viewed</h2>
 
-      <button
-        className={
-          'tleftButtonViewed' + (classIncrementViewed === 0 ? ' thide' : '')
-        }
-        onClick={handleLeftViewed}
-      >
+      <button className={ 'tleftButtonViewed' + (classIncrementViewed === 0 ? ' thide' : '')} onClick={handleLeftViewed}>
         <FontAwesomeIcon icon='angle-left' />
       </button>
 
-      <button
-        className={
-          'trightButtonViewed' +
-          (classIncrementViewed + 2 > selectionViewed.length / 2
-            ? ' thide'
-            : '')
-        }
+      <button className={'trightButtonViewed' +(classIncrementViewed + 2 > selectionViewed.length / 2 ? ' thide': '')}
         onClick={handleRightViewed}
       >
         <FontAwesomeIcon icon='angle-right' />
       </button>
 
-      <div
-        className={'tniceRowViewed' + ` transformLeft${classIncrementViewed}`}
-      >
+      <div className={'tniceRowViewed' + ` transformLeft${classIncrementViewed}`}>
         {selectionViewed.map((item) => (
           <div key={item.id}>
             <Item
