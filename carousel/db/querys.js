@@ -34,6 +34,7 @@ const getCategories = (id, callback) => {
     }
   })
 }
+
 const getItem = (id, callback) => {
   connection.query(`select * from items where id = ?`,[ id ], (err, data) => {
     if(err){
