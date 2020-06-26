@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import Item from './components/Item.jsx';
-import CarouselRelated from './components/CarouselRelated.jsx';
-import CarouselVisited from './components/CarouselVisited.jsx';
+import Item from './components/Item.jsx.js';
+import CarouselRelated from './components/CarouselRelated.jsx.js';
+import CarouselVisited from './components/CarouselVisited.jsx.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class App extends React.Component {
