@@ -1,5 +1,5 @@
-# TylerCarousel
-Tylercarousel dynamically renders a scrollable list of related products for a searched item. A second carousel may list previously viewed items. 
+# Wowes Carousel
+Wowes Carousel dynamically renders a scrollable list of related World of Warcraft themed products for a searched item. A second carousel component lists previously viewed items. 
 
 npm install 
 
