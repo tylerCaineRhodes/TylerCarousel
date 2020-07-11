@@ -63,80 +63,92 @@ export default class App extends React.Component {
   }
   
   getClickedItem(e) {
-    axios.get('/wowStuff/item', {
-      params: {
-        id: e.detail,
-      },
-    })
-    .then((response) => {
-      let isPopulated = false;
-
-      for (let i = 0; i < this.state.selectionViewed.length; i++) {
-        if (this.state.selectionViewed[i].id === response.data[0].id) {
-          isPopulated = true;
-          break;
+    axios
+      .get('http://wowescarousel.us-east-2.elasticbeanstalk.com/wowStuff/item',
+        {
+          params: {
+            id: e.detail,
+          },
         }
-      }
-      if(!isPopulated){
-        let temp = this.state.selectionViewed.concat(response.data)
-        this.setState({
-          selectionViewed :temp,
-          // <-- bounceback functionality -->
-          // classIncrement : 0,
-          classIncrementViewed : 0,
-        })
-      }
-    })
-    .catch((err) => {
-      console.log('something went wrong with fetching an item yo from database', err)
-    })
+      )
+      .then((response) => {
+        let isPopulated = false;
+
+        for (let i = 0; i < this.state.selectionViewed.length; i++) {
+          if (this.state.selectionViewed[i].id === response.data[0].id) {
+            isPopulated = true;
+            break;
+          }
+        }
+        if (!isPopulated) {
+          let temp = this.state.selectionViewed.concat(response.data);
+          this.setState({
+            selectionViewed: temp,
+            // <-- bounceback functionality -->
+            // classIncrement : 0,
+            classIncrementViewed: 0,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(
+          'something went wrong with fetching an item yo from database',
+          err
+        );
+      });
   }
 
   getRelatedItems(e) {
     let idVariable = e.detail;
-    axios.get('/wowStuff/category', {
-      params: {
-        id: idVariable,
-      },
-    })
-    .then((response) => {
-      let fifteenItems = [];
-      let randomNum = Math.floor(Math.random() * Math.floor(4)), endNum = 15;
-      for (let i = randomNum; i < randomNum + endNum; i++) {
-        if (response.data[i].id !== idVariable) {
-          fifteenItems.push(response.data[i]);
-        } else {
-          endNum += 1;
+    axios
+      .get(
+        'http://wowescarousel.us-east-2.elasticbeanstalk.com/wowStuff/category',
+        {
+          params: {
+            id: idVariable,
+          },
         }
-      }
-      this.setState({
-        selection: fifteenItems,
+      )
+      .then((response) => {
+        let fifteenItems = [];
+        let randomNum = Math.floor(Math.random() * Math.floor(4)),
+          endNum = 15;
+        for (let i = randomNum; i < randomNum + endNum; i++) {
+          if (response.data[i].id !== idVariable) {
+            fifteenItems.push(response.data[i]);
+          } else {
+            endNum += 1;
+          }
+        }
+        this.setState({
+          selection: fifteenItems,
+        });
       });
-    });
   }
 
   fetchAllData() {
-    axios.get('/wowStuff')
-    .then((response) => {
-      let fifteenItems = [];
-      // let randomNum = Math.floor(Math.random() * Math.floor(85));
-      // for(let i = randomNum; i < (randomNum + 15); i++){
-      //   fifteenItems.push(response.data[i])
-      // }
-      for (let i = 0; i < 15; i++) {
-        fifteenItems.push(response.data[i]);
-      }
-      this.setState({
-        data: response.data,
-        selection: fifteenItems,
+    axios
+      .get('http://wowescarousel.us-east-2.elasticbeanstalk.com/wowStuff')
+      .then((response) => {
+        let fifteenItems = [];
+        // let randomNum = Math.floor(Math.random() * Math.floor(85));
+        // for(let i = randomNum; i < (randomNum + 15); i++){
+        //   fifteenItems.push(response.data[i])
+        // }
+        for (let i = 0; i < 15; i++) {
+          fifteenItems.push(response.data[i]);
+        }
+        this.setState({
+          data: response.data,
+          selection: fifteenItems,
+        });
+      })
+      .catch((err) => {
+        console.log(
+          'something went wrong with fetching all data from database',
+          err
+        );
       });
-    })
-    .catch((err) => {
-      console.log(
-        'something went wrong with fetching all data from database',
-        err
-      );
-    });
   }
 
   render() {
