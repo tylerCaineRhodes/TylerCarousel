@@ -64,7 +64,7 @@ export default class App extends React.Component {
   
   getClickedItem(e) {
     axios
-      .get('http://wowescarousel.us-east-2.elasticbeanstalk.com/wowStuff/item',
+      .get('/wowStuff/item',
         {
           params: {
             id: e.detail,
@@ -101,8 +101,7 @@ export default class App extends React.Component {
   getRelatedItems(e) {
     let idVariable = e.detail;
     axios
-      .get(
-        'http://wowescarousel.us-east-2.elasticbeanstalk.com/wowStuff/category',
+      .get('/wowStuff/category',
         {
           params: {
             id: idVariable,
@@ -128,7 +127,7 @@ export default class App extends React.Component {
 
   fetchAllData() {
     axios
-      .get('http://wowescarousel.us-east-2.elasticbeanstalk.com/wowStuff')
+      .get('/wowStuff')
       .then((response) => {
         let fifteenItems = [];
         // let randomNum = Math.floor(Math.random() * Math.floor(85));
