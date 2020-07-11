@@ -16,11 +16,7 @@ const CarouselRelated = ({ classIncrement, handleLeft, handleRight, selection })
       </button>
 
       <div className={'tniceRowRelated' + ` transformLeft${classIncrement}`}>
-        {selection.map((item) => {
-          console.log(selection)
-          console.log(item)
-          return;
-          return(
+        {selection.map((item) => (
           <div key={item.id}>
             <Item
               name={item.name}
@@ -30,7 +26,7 @@ const CarouselRelated = ({ classIncrement, handleLeft, handleRight, selection })
               rating={item.rating}
             />
           </div>
-        )})}
+        ))}
       </div>
     </div>
   </div>
