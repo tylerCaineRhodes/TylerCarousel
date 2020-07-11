@@ -69,17 +69,27 @@ export default class App extends React.Component {
       },
     })
     .then((response) => {
-      let temp = this.state.selectionViewed.concat(response.data);
-      this.setState({
-        selectionViewed: temp,
-      });
+      let isPopulated = false;
+
+      for (let i = 0; i < this.state.selectionViewed.length; i++) {
+        if (this.state.selectionViewed[i].id === response.data[0].id) {
+          isPopulated = true;
+          break;
+        }
+      }
+      if(!isPopulated){
+        let temp = this.state.selectionViewed.concat(response.data)
+        this.setState({
+          selectionViewed :temp,
+          // <-- bounceback functionality -->
+          // classIncrement : 0,
+          classIncrementViewed : 0,
+        })
+      }
     })
     .catch((err) => {
-      console.log(
-        'something went wrong with fetching an item yo from database',
-        err
-      );
-    });
+      console.log('something went wrong with fetching an item yo from database', err)
+    })
   }
 
   getRelatedItems(e) {

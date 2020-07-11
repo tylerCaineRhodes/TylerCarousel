@@ -8,7 +8,9 @@ class Item extends Component {
 
     this.state = {
       rating : props.rating,
-      id: this.props.itemId
+      id: this.props.itemId,
+      randomDeal: this.generateRandomDeal(),
+      randomDate: this.generateRandomDate(),
     }
     this.clickItem = this.clickItem.bind(this);
     this.generateRandomDeal = this.generateRandomDeal.bind(this);
@@ -37,6 +39,7 @@ class Item extends Component {
   }
 
   render(){
+    const {randomDate, randomDeal, rating} = this.state; 
     
     return (
       <div className='tsingleItem' onClick={this.clickItem} >
@@ -51,12 +54,12 @@ class Item extends Component {
           starCount={5}
           starColor={'#0471AF'}
           emptyStarColor={"#c4c8bd"}
-          value={this.state.rating}
+          value={rating}
         />
         
         </span>
 
-        <span id="tsmallSave">SAVE {this.generateRandomDeal()}% thru {this.generateRandomDate()}2020</span>
+        <span id="tsmallSave">SAVE { randomDeal }% thru { randomDate }2020</span>
       </div>
     )
   }
