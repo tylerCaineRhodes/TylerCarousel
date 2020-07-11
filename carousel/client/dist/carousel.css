@@ -32,6 +32,7 @@
   max-width: 1032px;
   margin-bottom: 50px;
   z-index: 1;
+  margin: auto;
 }
 
 /* written for scalability but realistically only needs 10 classes*/
