@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import Item from './components/Item.jsx.js';
-import CarouselRelated from './components/CarouselRelated.jsx.js';
-import CarouselVisited from './components/CarouselVisited.jsx.js';
+import Item from './components/Item.jsx';
+import CarouselRelated from './components/CarouselRelated.jsx';
+import CarouselVisited from './components/CarouselVisited.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class App extends React.Component {
@@ -63,7 +63,7 @@ export default class App extends React.Component {
   }
   
   getClickedItem(e) {
-    axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/item', {
+    axios.get('/wowStuff/item', {
       params: {
         id: e.detail,
       },
@@ -84,7 +84,7 @@ export default class App extends React.Component {
 
   getRelatedItems(e) {
     let idVariable = e.detail;
-    axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff/category', {
+    axios.get('/wowStuff/category', {
       params: {
         id: idVariable,
       },
@@ -106,14 +106,14 @@ export default class App extends React.Component {
   }
 
   fetchAllData() {
-    axios.get('http://carousel.us-east-2.elasticbeanstalk.com/wowStuff')
+    axios.get('/wowStuff')
     .then((response) => {
       let fifteenItems = [];
       // let randomNum = Math.floor(Math.random() * Math.floor(85));
       // for(let i = randomNum; i < (randomNum + 15); i++){
       //   fifteenItems.push(response.data[i])
       // }
-      for (let i = 1; i < 16; i++) {
+      for (let i = 0; i < 15; i++) {
         fifteenItems.push(response.data[i]);
       }
       this.setState({

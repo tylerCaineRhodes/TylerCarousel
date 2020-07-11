@@ -2,15 +2,19 @@ const mysql = require('mysql');
 require('dotenv').config();
 
 const connection = mysql.createConnection({
-  host: 'wowescarousel.crg6wckxsyhk.us-east-2.rds.amazonaws.com',
+  host: 'localhost',
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  port: process.env.PORT,
+  // port: process.env.PORT,
   database: process.env.DB_NAME,
 });
 
-connection.connect(err => {
-  console.log('now connected to your database')
+connection.connect((err) => {
+  if(err){
+    console.log('something went wrong');
+  } else {
+    console.log('now connected to your database')
+  }
 });
 
 const getAllData = (callback) => {
